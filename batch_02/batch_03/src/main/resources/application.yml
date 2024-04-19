@@ -1,0 +1,16 @@
+#DB 끼리 주고받는 batch용
+spring:
+  batch:
+    job:
+#      아무것도 없다면 안돌아감. 원하는 Job을 돌리기 위해서는 Application 의 Program Arguments를 수정해줘야함
+      names: ${job.name:NONE}
+  db1:
+    datasource:
+      jdbc-url: jdbc:mysql://localhost:3306/db_alpha
+      username: user_alpha
+      password: 1234
+  db2:
+    datasource:
+      jdbc-url: jdbc:mysql://localhost:3306/db_beta
+      username: user_alpha
+      password: 1234
